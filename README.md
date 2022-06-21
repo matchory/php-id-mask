@@ -4,10 +4,10 @@ IDMask
 
 IDMask is a PHP library for masking **internal IDs** (e.g. from your DB) when they need to be publicly published to
 
-- *hide their actual value and to prevent forging**. This should make it very hard for an attacker to **understand**
+- **hide their actual value and to prevent forging**. This should make it very hard for an attacker to **understand**
   provided IDs (e.g. by witnessing a sequence, deducting how many orders you had, etc.) and **prevent guessing** of
   possible valid ones. Masking is **fully reversible** and also supports optional **randomization** for e.g.
-- *shareable links** or **one-time tokens**.  
+- **shareable links** or **one-time tokens**.  
   It has a wide support for various **data types** including (big) integers, UUIDs and arbitrary strings. This library
   bases its security on **strong cryptographic primitives** (
   [AES](https://en.wikipedia.org/wiki/Advanced_Encryption_Standard), [HMAC](https://en.wikipedia.org/wiki/HMAC),
