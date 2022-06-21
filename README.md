@@ -3,35 +3,30 @@ IDMask
 > IDMask is an implementation of [IDMask](https://github.com/patrickfav/id-mask) in PHP.
 
 IDMask is a PHP library for masking **internal IDs** (e.g. from your DB) when they need to be publicly published to
-
-- **hide their actual value and to prevent forging**. This should make it very hard for an attacker to **understand**
-  provided IDs (e.g. by witnessing a sequence, deducting how many orders you had, etc.) and **prevent guessing** of
-  possible valid ones. Masking is **fully reversible** and also supports optional **randomization** for e.g.
-- **shareable links** or **one-time tokens**.  
-  It has a wide support for various **data types** including (big) integers, UUIDs and arbitrary strings. This library
-  bases its security on **strong cryptographic primitives** (
-  [AES](https://en.wikipedia.org/wiki/Advanced_Encryption_Standard), [HMAC](https://en.wikipedia.org/wiki/HMAC),
-  [HKDF](https://en.wikipedia.org/wiki/HKDF)) to create a secure encryption schema. It was inspired by
-  [HashIds](https://hashids.org/), but tries to tackle most of its shortcomings.
+**hide their actual value and to prevent forging**. This should make it very hard for an attacker to **understand**
+provided IDs (e.g. by witnessing a sequence, deducting how many orders you had, etc.) and **prevent guessing** of
+possible valid ones. Masking is **fully reversible** and also supports optional **randomization** for e.g.
+**shareable links** or **one-time tokens**.  
+It has a wide support for various **data types** including (big) integers, UUIDs and arbitrary strings. This library
+bases its security on **strong cryptographic primitives** ([AES](https://en.wikipedia.org/wiki/Advanced_Encryption_Standard),
+[HMAC](https://en.wikipedia.org/wiki/HMAC), [HKDF](https://en.wikipedia.org/wiki/HKDF)) to create a secure encryption
+schema. It was inspired by [HashIds](https://hashids.org/), but tries to tackle most of its shortcomings.
 
 ## Feature Overview
 
-- **Secure**: Creates encrypted IDs with **proper cryptography** (
-  [AES](https://en.wikipedia.org/wiki/Advanced_Encryption_Standard), [HKDF](https://en.wikipedia.org/wiki/HKDF))
-  including **forgery protection** ([HMAC](https://en.wikipedia.org/wiki/HMAC))
+- **Secure**: Creates encrypted IDs with **proper cryptography** ([AES](https://en.wikipedia.org/wiki/Advanced_Encryption_Standard),
+  [HKDF](https://en.wikipedia.org/wiki/HKDF)) including **forgery protection** ([HMAC](https://en.wikipedia.org/wiki/HMAC))
 - **Wide range of data types supported**: Masks IDs from integers, UUIDs, strings, or byte sequences
 - **Full support of types**: Has no arbitrary restrictions like "only positive numbers", etc.
 - **ID randomization**: If enabled, IDs are generated which appear uncorrelated with the same underlying value.
 - **No collisions possible**: As IDs are not hashed or otherwise compressed, collisions are impossible.
-
-<!-- - **Built-in caching support**: To increase performance a PSR-6 cache implementation can be used. -->
-
 - **Lightweight & Easy-to-use**: Has only minimal dependencies and a straight forward API.
 - **Supports multiple encodings**: Depending on your requirement (short IDs vs. readability vs. should not contain
   words) multiple encodings are available including [Base64](https://en.wikipedia.org/wiki/Base64),
   [Base32](https://en.wikipedia.org/wiki/Base32) and [Hex](https://en.wikipedia.org/wiki/Hexadecimal) with the option of
   providing a custom one.
 
+<!-- - **Built-in caching support**: To increase performance a PSR-6 cache implementation can be used. -->
 <!-- - **Framework integrations included**: Includes support for Laravel and Symfony out of the box -->
 
 Installation
