@@ -1,0 +1,43 @@
+{
+  "name": "matchory/id-mask",
+  "description": "IDMask is a PHP library for masking internal ids (e.g. from your DB) when they need to be published to hide their actual value and to prevent forging. It has support for optional randomisation. This library bases its security on strong cryptographic primitives.",
+  "type": "library",
+  "require-dev": {
+    "phpunit/phpunit": "^9.5",
+    "vimeo/psalm": "^4.23"
+  },
+  "license": "MIT",
+  "autoload": {
+    "psr-4": {
+      "Matchory\\IdMask\\": "src/"
+    },
+    "files": [
+      "src/functions.php"
+    ]
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Matchory\\IdMask\\Tests\\": "tests/"
+    }
+  },
+  "authors": [
+    {
+      "name": "Moritz Friedrich",
+      "email": "moritz@matchory.com"
+    }
+  ],
+  "require": {
+    "ramsey/uuid": "^4.3",
+    "ext-openssl": "*"
+  },
+  "config": {
+    "allow-plugins": {
+      "composer/package-versions-deprecated": true
+    },
+    "sort-packages": true
+  },
+  "scripts": {
+    "test": "phpunit",
+    "check": "psalm --report=test-reports/psalm.junit.xml --report=test-reports/psalm.txt"
+  }
+}
